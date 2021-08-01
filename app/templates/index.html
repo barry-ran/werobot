@@ -1,0 +1,171 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>逸趣横生君VIP视频在线解析</title>
+	<meta name="description" content="还在等VIP更新吗，快来使用全网VIP解析吧" />
+	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}" />
+	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}" />
+	<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" />
+	<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+	<script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+	<!--[if lt IE 9]><script src="html5shiv.min.js" tppabs="https://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script><script src="respond.min.js" tppabs="https://libs.useso.com/js/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+	<script type="text/javascript">
+		eval(function (p, a, c, k, e, d) { e = function (c) { return (c < a ? "" : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36)) }; if (!''.replace(/^/, String)) { while (c--) d[e(c)] = k[c] || e(c); k = [function (e) { return d[e] }]; e = function () { return '\\w+' }; c = 1 }; while (c--) if (k[c]) p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]); return p }('b a(){0 6=1.2("9").4;0 5=1.2("3");0 3=1.2("3").c;0 8=5.e[3].4;0 7=1.2("f");7.d=8+6}', 16, 16, 'var|document|getElementById|jk|value|jkurl|diz|cljurl|jkv|url|dihejk|function|selectedIndex|src|options|player'.split('|'), 0, {}))
+	</script>
+	<!-- 百度统计 -->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+	  		var hm = document.createElement("script");
+	  		hm.src = "https://hm.baidu.com/hm.js?8fa4bc18a508d8470caa0fae6768c772";
+	  		var s = document.getElementsByTagName("script")[0]; 
+	  		s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	
+</head>
+
+<body>
+	<br>
+	<div class="container" style="padding-top:0px;" id="wbk">
+		<div class="alert alert-success alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert">
+				<span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<strong>一、在【播放地址】输入播放的VIP会员视频的网址，例如优酷http://v.youku.com/v_show/id_XMjcxMjY5NjM1Ng==.html 然后点击【立即播放】按钮，就可以播放了。</br>
+				二、如果无法播放或者缓冲慢，刷新一下浏览器。或者【选择接口】里面换个播放接口，然后再试。
+				</br>三、电脑也可以观看哟。</strong>
+		</div>
+		<div class="col-md-14 column">
+			<form method="get">
+				<div class="input-group" style="width: 100%;">
+					<span class="input-group-addon input-lg" style="width: 80px; ">选择接口</span>
+					<select class="form-control input-lg" id="jk">
+						{% for url in url_list %}
+							{% if url.index==0 %}
+            					<option value="{{ url[0] }}" selected>{{ url[1] }}</option>
+							{% else %}
+            					<option value="{{ url[0] }}" >{{ url[1] }}</option>
+        					{% endif %}
+						{% endfor %}
+					</select></div><br />
+				<div class="input-group" style="width: 100%;"><span class="input-group-addon input-lg"
+						style="width: 80px;">播放地址</span><input class="form-control input-lg" type="search"
+						placeholder="输入播放地址" value="{{ video_url }}" id="url"></div><br>
+				<div><button id="bf" type="button" class="btn btn-success btn-lg btn-block"
+						onclick="dihejk()">立即播放</button></div>
+			</form>
+		</div><br><br>
+		<div class="col-md-14 column">
+			<div class="panel panel-default">
+				<div id="kj" class="panel-body">
+					<iframe src="{{ default_parse_url+video_url }}" id="player" width="100%" height="500px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" allowTransparency="true"
+						frameborder="0" scrolling="no">
+					</iframe>
+				</div>
+			</div>
+		</div>
+		<div class="alert alert-danger" role="alert">本站不提供解析服务，接口源于互联网，仅供学习交流，请勿用于商业，后果自负！已支持以下网站视频播放(包含VIP电影)</div>
+	</div>
+	<center>
+		<div class="tips" style="width: 100%;">
+			<div class="logos_lists">
+				<dl>
+					<dt><a target="_blank" href="http://www.le.com/"><img
+								src="{{url_for('static',filename='img/letvlogo.png')}}"></a></dt>
+					<dd>乐视TV视频</dd>
+				</dl>
+				<dl>
+					<dt><a target="_blank" href="http://v.qq.com/"><img
+								src="{{url_for('static',filename='img/qqlogo.png')}}" width="150" height="35"></a></dt>
+					<dd>腾讯视频</dd>
+				</dl>
+				<dl>
+					<dt><a target="_blank" href="http://www.iqiyi.com/"><img
+								src="{{url_for('static',filename='img/iqiyi.png')}}" width="110" height="35"></a></dt>
+					<dd>爱奇艺视频</dd>
+				</dl>
+				<dl>
+					<dt><a target="_blank" href="http://www.youku.com/"><img
+								src="{{url_for('static',filename='img/youkulogo.png')}}"></a></dt>
+					<dd>优酷视频</dd>
+				</dl>
+				<dl>
+					<dt><a target="_blank" href="http://www.tudou.com/"><img
+								src="{{url_for('static',filename='img/tudoulogo.png')}}"></a></dt>
+					<dd>土豆视频</dd>
+				</dl>
+				<dl>
+					<dt><a target="_blank" href="http://www.mgtv.com/"><img
+								src="{{url_for('static',filename='img/hunantvlogo.png')}}"></a></dt>
+					<dd>芒果TV视频</dd>
+				</dl>
+				<dl>
+					<dt><a target="_blank" href="http://tv.sohu.com/"><img
+								src="{{url_for('static',filename='img/sohulogo.png')}}"></a></dt>
+					<dd>搜狐视频</dd>
+				</dl>
+				</br>
+				<dl>
+					<dt><img src="{{url_for('static',filename='img/ykcloud.png')}}" width="110" height="35"></dt>
+					<dd>优酷云C</dd>
+				</dl>
+				<dl>
+					<dt><a target="_blank" href="http://www.acfun.tv/"><img
+								src="{{url_for('static',filename='img/acfun.png')}}" width="110" height="35"></a></dt>
+					<dd>Ac弹幕网</dd>
+				</dl>
+				<dl>
+					<dt><a target="_blank" href="jhttp://www.bilibili.com/"><img
+								src="{{url_for('static',filename='img/bilibili.png')}}" width="110" height="35"></a>
+					</dt>
+					<dd>哔哩哔哩</dd>
+				</dl>
+				<dl>
+					<dt><a target="_blank" href="http://www.fun.tv/"><img
+								src="{{url_for('static',filename='img/fengxing.gif')}}" width="110" height="35"></a>
+					</dt>
+					<dd>风行网</dd>
+				</dl>
+				<dl>
+					<dt><a target="_blank" href="http://www.wasu.cn/"><img
+								src="{{url_for('static',filename='img/wasulogo.png')}}"></a></dt>
+					<dd>WASU华数视频</dd>
+				</dl>
+				<dl>
+					<dt><a target="_blank" href="http://www.56.com/"><img
+								src="{{url_for('static',filename='img/56logo.png')}}"></a></dt>
+					<dd>56</dd>
+				</dl>
+				<dl>
+					<dt><a target="_blank" href="http://www.yinyuetai.com/"><img
+								src="{{url_for('static',filename='img/yinyuetailogo.png')}}"></a></dt>
+					<dd>音悦台MV</dd>
+				</dl>
+			</div>
+		</div>
+	</center>
+	</br>
+	<div id="footer">
+		<center>欢迎使用 © <a href="#" target="_blank">逸趣横生君VIP视频在线解析</a></center>
+	</div>
+
+	<footer class="footer">
+		<div class="branding">			
+			<!--居中部分-->
+			<hr style="display: block;height: 1px;margin-bottom: 10px;background-color: #4f4f4f;    margin-top: 0px;margin-bottom: 20px;border: 0;"/>
+			<div class="container footer-tit">					
+				<p>免责声明：本站所有视频资源均来自网络。服务器仅展示第三方网站接口页面，并不存储任何视频资源。因此经由本站搜索所产生的任何结果皆不代表本站立场，本站不对其真实合法性以及版权负责，亦不承担任何法律责任。</p>			
+				<p>若侵犯了您的权益，请发邮件通知站长，收到邮件后24小时内删除。</p>
+				
+				<p>站长邮箱：devilkun@foxmail.com&nbsp; <a class="foot-tt" href="http://www.beian.miit.gov.cn/" ><img style="vertical-align: middle;" src="{{url_for('static',filename='img/beian.png')}}"/>鲁ICP备19033383号</a>&nbsp; </p>
+				<p>Copyright&nbsp;&copy;&nbsp;2019~2022&nbsp; 版权所有</p>				
+			</div>
+		</div>
+	 </footer>
+
+</body>
+
+</html>

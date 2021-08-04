@@ -14,7 +14,9 @@
                 "FLASK_ENV": "development"
             },
             "args": [
-                "run"
+                "run",
+                "-p",
+                "8080"
             ],
             "jinja": true
         }

@@ -1,5 +1,4 @@
 from . import db
-from sqlalchemy.sql.expression import func
 
 
 class VipVideoParse(db.Model):

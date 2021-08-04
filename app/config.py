@@ -18,7 +18,22 @@ class Config:
 
     PRODUCTION_CONFIG = False
 
+    # 公众号配置
+    WEROBOT_ID = os.environ.get(
+        'WEROBOT_ID') or 'no found WEROBOT_ID on .env'
+    WEROBOT_SECRET = os.environ.get(
+        'WEROBOT_SECRET') or 'no found WEROBOT_SECRET on .env'
+
+    # 阿里ocr api
+    OCR_APP_ID = os.environ.get(
+        'OCR_APP_ID') or 'no found OCR_APP_ID on .env'
+    OCR_API_KEY = os.environ.get(
+        'OCR_API_KEY') or 'no found OCR_API_KEY on .env'
+    OCR_SECRET_KEY = os.environ.get(
+        'OCR_SECRET_KEY') or 'no found OCR_SECRET_KEY on .env'
+
     # init_app是为了在初始化app时附加一些额外配置用的
+
     @ classmethod
     def init_app(cls, app):
 

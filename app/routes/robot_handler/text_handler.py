@@ -57,7 +57,7 @@ class TextHandler(object):
         Log.logger().info('begin search movie:{}'.format(message.content))
         movies = Movie.search(message.content)
         Log.logger().info('end search movie:{}'.format(message.content))
-        text = "以下结果来源网络，如有侵权，请联系公众号删除：\n"
+        text = "以下结果来源网络，如有侵权，请联系公众号删除（建议复制到浏览器打开）：\n"
 
         for movie in movies:
             text += movie.title + ':' + movie.url + '\n'

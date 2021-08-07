@@ -31,13 +31,14 @@ class Movie(object):
                 movies = cls.search_from_json(key, website.search_json)
                 # 相对路径转绝对路径
                 for movie in movies:
-                    movie.url = urljoin(website.url, movie.url)
+                    if not (movie.url.startswith('http:') or movie.url.startswith('https:')):
+                        movie.url = urljoin(website.url, movie.url)
                     print('search movie:', movie.url)
 
                 search_results += movies
 
-                # 找到了就不再继续找了
-                if len(search_results) > 0:
+                # 大于5个结果就不再继续找了
+                if len(search_results) > 5:
                     break
 
             return search_results

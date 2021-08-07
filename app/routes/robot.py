@@ -41,6 +41,16 @@ my_werobot.client.create_menu({
                 },
             ]
         },
+        {
+            "name": "技术博客",
+            "sub_button": [
+                {
+                    "type": "view",
+                    "name": "我的开源作品",
+                    "url": "https://github.com/barry-ran"
+                },
+            ]
+        },
     ]})
 
 

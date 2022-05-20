@@ -27,7 +27,7 @@ my_werobot.client.create_menu({
                 {
                     "type": "view",
                     "name": "影视VIP接口",
-                    "url": "http://www.yiquvip.com/"
+                    "url": "http://129.211.167.170/"
                 }
             ]
         },
